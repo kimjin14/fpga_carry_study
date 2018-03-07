@@ -1,0 +1,254 @@
+
+do run.do
+# Cannot open macro file: run.do
+cd simulation
+ls
+# generic
+# popcount_mimic_circuit_tb.v
+# run.do
+# transcript
+# vsim.wlf
+# wave.do
+# work
+do run.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:03:22 on Mar 06,2018
+# vlog -reportprogress 300 -work work ../popcount_mimic_circuit.v 
+# -- Compiling module popcount_mimic_circuit
+# -- Compiling module add20
+# -- Compiling module addall_fa
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(94): near ".": syntax error, unexpected '.', expecting ')'.
+# ** Error (suppressible): ../popcount_mimic_circuit.v(97): (vlog-2388) 'adder_1' already declared in this scope (addall_fa).
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(101): near ")": syntax error, unexpected ')', expecting ';' or ','.
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(111): near ".": syntax error, unexpected '.', expecting ')'.
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(115): near ".": syntax error, unexpected '.', expecting ')'.
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(117): near "{": syntax error, unexpected '{'.
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(124): near ".": syntax error, unexpected '.', expecting ')'.
+# -- Compiling module add32_fa
+# -- Compiling module xnorpop8_s0s1_fa
+# -- Compiling module xnorpop20_fa
+# -- Compiling module xnorpop20
+# -- Compiling module full_adder_1bit
+# -- Compiling module xnorpop20_old
+# End time: 18:03:22 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# ** Error: /opt/modelsim/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./run.do line 1
+# /opt/modelsim/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -work work ../popcount_mimic_circuit.v"
+do run.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:03:55 on Mar 06,2018
+# vlog -reportprogress 300 -work work ../popcount_mimic_circuit.v 
+# -- Compiling module popcount_mimic_circuit
+# -- Compiling module add20
+# -- Compiling module addall_fa
+# ** Error (suppressible): ../popcount_mimic_circuit.v(97): (vlog-2388) 'adder_1' already declared in this scope (addall_fa).
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(101): near ")": syntax error, unexpected ')', expecting ';' or ','.
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(115): near ".": syntax error, unexpected '.', expecting ')'.
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(117): near "{": syntax error, unexpected '{'.
+# -- Compiling module add32_fa
+# -- Compiling module xnorpop8_s0s1_fa
+# -- Compiling module xnorpop20_fa
+# -- Compiling module xnorpop20
+# -- Compiling module full_adder_1bit
+# -- Compiling module xnorpop20_old
+# End time: 18:03:55 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# ** Error: /opt/modelsim/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./run.do line 1
+# /opt/modelsim/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -work work ../popcount_mimic_circuit.v"
+do run.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:04:34 on Mar 06,2018
+# vlog -reportprogress 300 -work work ../popcount_mimic_circuit.v 
+# -- Compiling module popcount_mimic_circuit
+# -- Compiling module add20
+# -- Compiling module addall_fa
+# ** Error (suppressible): ../popcount_mimic_circuit.v(97): (vlog-2388) 'adder_1' already declared in this scope (addall_fa).
+# ** Error: (vlog-13069) ../popcount_mimic_circuit.v(117): near "{": syntax error, unexpected '{'.
+# -- Compiling module add32_fa
+# -- Compiling module xnorpop8_s0s1_fa
+# -- Compiling module xnorpop20_fa
+# -- Compiling module xnorpop20
+# -- Compiling module full_adder_1bit
+# -- Compiling module xnorpop20_old
+# End time: 18:04:34 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /opt/modelsim/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./run.do line 1
+# /opt/modelsim/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -work work ../popcount_mimic_circuit.v"
+do run.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:04:50 on Mar 06,2018
+# vlog -reportprogress 300 -work work ../popcount_mimic_circuit.v 
+# -- Compiling module popcount_mimic_circuit
+# -- Compiling module add20
+# -- Compiling module addall_fa
+# ** Error (suppressible): ../popcount_mimic_circuit.v(97): (vlog-2388) 'adder_1' already declared in this scope (addall_fa).
+# -- Compiling module add32_fa
+# -- Compiling module xnorpop8_s0s1_fa
+# -- Compiling module xnorpop20_fa
+# -- Compiling module xnorpop20
+# -- Compiling module full_adder_1bit
+# -- Compiling module xnorpop20_old
+# End time: 18:04:50 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/modelsim/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./run.do line 1
+# /opt/modelsim/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -work work ../popcount_mimic_circuit.v"
+do run.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:05:09 on Mar 06,2018
+# vlog -reportprogress 300 -work work ../popcount_mimic_circuit.v 
+# -- Compiling module popcount_mimic_circuit
+# -- Compiling module add20
+# -- Compiling module addall_fa
+# -- Compiling module add32_fa
+# -- Compiling module xnorpop8_s0s1_fa
+# -- Compiling module xnorpop20_fa
+# -- Compiling module xnorpop20
+# -- Compiling module full_adder_1bit
+# -- Compiling module xnorpop20_old
+# 
+# Top level modules:
+# 	popcount_mimic_circuit
+# 	add20
+# 	xnorpop20
+# 	xnorpop20_old
+# End time: 18:05:09 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:05:09 on Mar 06,2018
+# vlog -reportprogress 300 -work work popcount_mimic_circuit_tb.v 
+# -- Compiling module popcount_mimic_circuit_tb
+# -- Compiling module compare
+# -- Compiling module xnorpop20_golden
+# -- Compiling module xnorpop128_golden
+# 
+# Top level modules:
+# 	popcount_mimic_circuit_tb
+# 	xnorpop20_golden
+# End time: 18:05:09 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -L work -L altera popcount_mimic_circuit_tb 
+# Start time: 18:05:09 on Mar 06,2018
+# Loading work.popcount_mimic_circuit_tb
+# Loading work.popcount_mimic_circuit
+# Loading work.xnorpop8_s0s1_fa
+# Loading work.full_adder_1bit
+# Loading work.add32_fa
+# Loading work.addall_fa
+# Loading work.xnorpop128_golden
+# Loading work.compare
+# Loading work.xnorpop20_fa
+# ** Error: (vish-4014) No objects found matching '/popcount_mimic_circuit_tb/dut/int_final_sum'.
+# Executing ONERROR command at macro ./wave.do line 12
+add wave -position end sim:/popcount_mimic_circuit_tb/dut/addall/*
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/kimjin14/work/mapping/fpga_synthesis/intel/mimic_circuit/simulation/wave.do
+quit -sim
+# End time: 18:08:01 on Mar 06,2018, Elapsed time: 0:02:52
+# Errors: 3, Warnings: 0
+do run.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:08:03 on Mar 06,2018
+# vlog -reportprogress 300 -work work ../popcount_mimic_circuit.v 
+# -- Compiling module popcount_mimic_circuit
+# -- Compiling module add20
+# -- Compiling module addall_fa
+# -- Compiling module add32_fa
+# -- Compiling module xnorpop8_s0s1_fa
+# -- Compiling module xnorpop20_fa
+# -- Compiling module xnorpop20
+# -- Compiling module full_adder_1bit
+# -- Compiling module xnorpop20_old
+# 
+# Top level modules:
+# 	popcount_mimic_circuit
+# 	add20
+# 	xnorpop20
+# 	xnorpop20_old
+# End time: 18:08:03 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:08:03 on Mar 06,2018
+# vlog -reportprogress 300 -work work popcount_mimic_circuit_tb.v 
+# -- Compiling module popcount_mimic_circuit_tb
+# -- Compiling module compare
+# -- Compiling module xnorpop20_golden
+# -- Compiling module xnorpop128_golden
+# 
+# Top level modules:
+# 	popcount_mimic_circuit_tb
+# 	xnorpop20_golden
+# End time: 18:08:03 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -L work -L altera popcount_mimic_circuit_tb 
+# Start time: 18:08:03 on Mar 06,2018
+# Loading work.popcount_mimic_circuit_tb
+# Loading work.popcount_mimic_circuit
+# Loading work.xnorpop8_s0s1_fa
+# Loading work.full_adder_1bit
+# Loading work.add32_fa
+# Loading work.addall_fa
+# Loading work.xnorpop128_golden
+# Loading work.compare
+# Loading work.xnorpop20_fa
+quit -sim
+# End time: 18:08:36 on Mar 06,2018, Elapsed time: 0:00:33
+# Errors: 0, Warnings: 0
+do run.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:08:37 on Mar 06,2018
+# vlog -reportprogress 300 -work work ../popcount_mimic_circuit.v 
+# -- Compiling module popcount_mimic_circuit
+# -- Compiling module add20
+# -- Compiling module addall_fa
+# -- Compiling module add32_fa
+# -- Compiling module xnorpop8_s0s1_fa
+# -- Compiling module xnorpop20_fa
+# -- Compiling module xnorpop20
+# -- Compiling module full_adder_1bit
+# -- Compiling module xnorpop20_old
+# 
+# Top level modules:
+# 	popcount_mimic_circuit
+# 	add20
+# 	xnorpop20
+# 	xnorpop20_old
+# End time: 18:08:37 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 18:08:37 on Mar 06,2018
+# vlog -reportprogress 300 -work work popcount_mimic_circuit_tb.v 
+# -- Compiling module popcount_mimic_circuit_tb
+# -- Compiling module compare
+# -- Compiling module xnorpop20_golden
+# -- Compiling module xnorpop128_golden
+# 
+# Top level modules:
+# 	popcount_mimic_circuit_tb
+# 	xnorpop20_golden
+# End time: 18:08:37 on Mar 06,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -L work -L altera popcount_mimic_circuit_tb 
+# Start time: 18:08:37 on Mar 06,2018
+# Loading work.popcount_mimic_circuit_tb
+# Loading work.popcount_mimic_circuit
+# Loading work.xnorpop8_s0s1_fa
+# Loading work.full_adder_1bit
+# Loading work.add32_fa
+# Loading work.addall_fa
+# Loading work.xnorpop128_golden
+# Loading work.compare
+# Loading work.xnorpop20_fa
+run 20ns
+# End time: 18:15:15 on Mar 06,2018, Elapsed time: 0:06:38
+# Errors: 0, Warnings: 0
