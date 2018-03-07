@@ -12,7 +12,7 @@ module popcount_mimic_circuit (inx, iny, sum);
   genvar i;
   generate
   for (i=0; i<6; i=i+1) begin: xnorpop20	
-	  xnorpop20_fa xnorpop20 (
+	  xnorpop20 xnorpop20 (
       .x(inx[i*20+:20]),
       .y(iny[i*20+:20]), 
       .cout(int_sum[i*5+:5]),
@@ -21,7 +21,7 @@ module popcount_mimic_circuit (inx, iny, sum);
     );
   end
   endgenerate
-  xnorpop8_s0s1_fa xnorpop8 (
+  xnorpop8_s0s1 xnorpop8 (
     .x(inx[127:120]),
     .y(iny[127:120]),
     .int_s0(int_s0),
@@ -31,9 +31,10 @@ module popcount_mimic_circuit (inx, iny, sum);
     .s0(sum[0])
   );
 
-  add32_fa add32 (.x(int_sum), .s2(sum[2]), .cout(int_sum_2));
+  add32 add32 (.x(int_sum), .s2(sum[2]), .cout(int_sum_2));
+  addall addall (.x(int_sum_2), .sum(sum[7:3]));
 
-  reg [4:0] int_final_sum; 
+/*  reg [4:0] int_final_sum; 
   integer j;
   always @ (*) begin
     int_final_sum = 0;
@@ -43,23 +44,100 @@ module popcount_mimic_circuit (inx, iny, sum);
   end
 
   assign sum[7:3] = int_final_sum[4:0];
-	
+	*/
 endmodule
 
-
-module add20 (x, y, s);
-  input [19:0]x;
-  input [19:0]y;
-  output [20:0]s;
-
-  assign s = x + y;
-
-endmodule
-
+//////////////////////////////////////////////////////////////////////////////////////////
 /*
+  last bit of adder tree for a LAB
 
+  takes the output from add32 and sums the rest up
 */
 
+module addall_fa(x, sum);
+  input [17:0]x;
+  output [4:0]sum;
+
+  genvar i;
+
+  // first adder tree 18 -> 9
+  wire [8:0]sum_1;
+  wire [8:0]cout_1;
+  full_adder_1bit f1_0 (
+    .a(x[0]), .b(x[9]), .cin(1'b0),
+    .s(sum_1[0]), .cout(cout_1[0])
+  ); 
+  generate
+  for (i = 1; i < 9; i=i+1) begin: adder_1
+    full_adder_1bit f1 (
+      .a(x[i]), .b(x[i+9]), .cin(cout_1[i-1]),
+      .s(sum_1[i]), .cout(cout_1[i])
+    );
+  end
+  endgenerate
+  assign sum[0] = cout_1[8];
+
+  // second adder tree 9 -> 4
+  wire [3:0]sum_2;
+  wire [3:0]cout_2;
+  full_adder_1bit f2_0 (
+    .a(sum_1[0]), .b(sum_1[4]), .cin(sum_1[8]),
+    .s(sum_2[0]), .cout(cout_2[0])
+  ); 
+  generate
+  for (i = 1; i < 4; i=i+1) begin: adder_2
+    full_adder_1bit f2 (
+      .a(sum_1[i]), .b(sum_1[i+4]), .cin(cout_2[i-1]),
+      .s(sum_2[i]), .cout(cout_2[i])
+    );
+  end
+  endgenerate
+  assign sum[1] = cout_2[3];
+  
+  // third adder tree 4 -> 2
+  wire [1:0]sum_3;
+  wire [1:0]cout_3;
+  full_adder_1bit f3_0 (
+    .a(sum_2[0]), .b(sum_2[2]), .cin(1'b0),
+    .s(sum_3[0]), .cout(cout_3[0])
+  ); 
+  full_adder_1bit f3_1 (
+    .a(sum_2[1]), .b(sum_2[3]), .cin(cout_3[0]),
+    .s(sum_3[1]), .cout(cout_3[1])
+  ); 
+  assign sum[2] = cout_3[1];
+
+  // last adder
+  wire sum_4;
+  wire cout_4;
+  full_adder_1bit f4_0 (
+    .a(sum_3[0]), .b(sum_3[1]), .cin(1'b0),
+    .s(sum_4), .cout(cout_4)
+  ); 
+  assign sum[3] = cout_4;
+  assign sum[4] = sum_4;
+  
+endmodule
+
+module addall(x, sum);
+  input [17:0]x;
+  output [4:0]sum;
+
+  wire [8:0]sum_1;
+  assign {sum[0], sum_1} = x[8:0] + x[17:9];
+
+  wire [3:0]sum_2; 
+  assign {sum[1], sum_2} = sum_1[3:0] + sum_1[7:4] + sum_1[8];
+
+  wire [1:0]sum_3;
+  assign {sum[2], sum_3} = sum_2[1:0] + sum_2[3:2];
+
+  assign sum[4:3] = sum_3[0] + sum[1];
+
+  
+endmodule
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 /*
   32-bit pop mimic function for a LAB
@@ -101,6 +179,18 @@ module add32_fa (x, s2, cout);
 
 endmodule
 
+module add32 (x, s2, cout);
+  input [35:0] x;
+  output s2;
+  output [17:0] cout;
+
+  wire [17:0]sum_1;
+  assign {s2, sum_1} = x[17:0] + x[35:18]; 
+  assign cout = sum_1;
+
+endmodule
+
+//////////////////////////////////////////////////////////////////////////////////////////
 /*
   8 XNOR-pop and extra adders for s0 and s1
 */
@@ -171,6 +261,30 @@ module xnorpop8_s0s1_fa (x, y, int_s0, int_s1, s0, s1, cout);
 
 endmodule
 
+module xnorpop8_s0s1 (x, y, int_s0, int_s1, s0, s1, cout);
+  input [7:0]x;
+  input [7:0]y;
+  input [5:0]int_s0;
+  input [5:0]int_s1;
+  output s0, s1;
+  output [5:0]cout;
+
+  wire [13:0]xnor_out;
+  assign xnor_out[7:0] = x ~^ y;
+  assign xnor_out[13:8] = int_s0;
+
+  wire [12:0]sum_1;
+  assign {s0, sum_1[6:0]}  = xnor_out[6:0] + xnor_out[13:7];
+  assign sum_1[12:7] = int_s1;
+
+  wire [5:0]sum_2;
+  assign {s1, sum_2} = sum_1[5:0] + sum_1[11:0] + sum_1[12];
+  assign cout = sum_2;
+
+
+endmodule
+
+//////////////////////////////////////////////////////////////////////////////////////////
 /* 
 	20 XNOR-pop mimic function for a LAB
   
@@ -243,6 +357,8 @@ module xnorpop20_fa (x, y, s0, s1, cout);
 	
 endmodule
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
 module xnorpop20 (x, y, s0, s1, cout);
 	input [19:0]x;
 	input [19:0]y;
@@ -261,6 +377,8 @@ module xnorpop20 (x, y, s0, s1, cout);
   assign {s1, cout} = sum_out[4:0] + sum_out[9:5];
 
 endmodule
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 module full_adder_1bit(
   input a, b, cin,
