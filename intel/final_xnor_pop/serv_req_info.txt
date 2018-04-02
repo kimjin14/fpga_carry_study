@@ -1,0 +1,30 @@
+<internal_error>
+<sub_system>ERR</sub_system>
+<callstack>
+	0x7f4216396171: ccl_err + 0x8171 (_ZN15ERR_STACKWALKER15get_stack_traceEPPKviiPv + 0xb1)
+	0x7f4216399015: ccl_err + 0xb015 (_Z14err_terminatorv + 0x4b)
+	0x7f4211665796: stdc++.so.6 + 0x63796 (_ZN10__cxxabiv111__terminateEPFvvE + 0x6)
+	0x7f42116657c3: stdc++.so.6 + 0x637c3
+	0x7f42116659ee: stdc++.so.6 + 0x639ee
+	0x7f42116b65e7: stdc++.so.6 + 0xb45e7 (_ZSt19__throw_logic_errorPKc + 0x67)
+	0x7f4215c9ae59: boost_regex.so.1.59.0 + 0x3ce59
+	0x7f42116c2098: stdc++.so.6 + 0xc0098 (_ZNSsC2EPKcRKSaIcE + 0x38)
+	0x7f423aa99675: comp_qexe + 0x17675 (_ZL24qexe_process_long_optionR15QEXE_LOCAL_ARGSRKSsS2_RbRSt4listISsSaISsEE + 0x883)
+	0x7f423aa9d3aa: comp_qexe + 0x1b3aa (_Z22qexe_process_argumentsP14QEXE_FRAMEWORKR15QEXE_LOCAL_ARGSiPPKc + 0x6ef)
+	0x7f423aa9e03d: comp_qexe + 0x1c03d (_Z18qexe_standard_mainP14QEXE_FRAMEWORKPPK22QEXE_OPTION_DEFINITIONiPPKc + 0x16a)
+	   0x41404a: quartus_sta + 0x1404a (_Z9qsta_mainiPPKc + 0xaa)
+	0x7f4218c007e0: ccl_msg + 0x407e0 (_Z15msg_main_threadPv + 0x10)
+	0x7f4215f5802c: ccl_thr + 0x602c (thr_final_wrapper + 0xc)
+	0x7f4218c0089f: ccl_msg + 0x4089f (_Z18msg_thread_wrapperPFPvS_ES_ + 0x62)
+	0x7f42165c9559: ccl_mem + 0xa559 (_Z18mem_thread_wrapperPFPvS_ES_ + 0x99)
+	0x7f4216396f92: ccl_err + 0x8f92 (_Z18err_thread_wrapperPFPvS_ES_ + 0x27)
+	0x7f4215f583f2: ccl_thr + 0x63f2 (thr_thread_wrapper + 0x15)
+	0x7f4218c02c37: ccl_msg + 0x42c37 (_Z12msg_exe_mainiPPKcPFiiS1_E + 0xa3)
+	0x7f4210b2b830: c.so.6 + 0x20830 (__libc_start_main + 0xf0)
+	   0x4088f5: quartus_sta + 0x88f5
+</callstack>
+<error>*** Fatal Error: Unhandled Exception</error>
+<date>Fri Mar 30 17:23:58 2018
+</date>
+<version>Version 16.1.0 Build 196 10/24/2016 SJ Standard Edition</version>
+</internal_error>
