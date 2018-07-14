@@ -1,7 +1,8 @@
-module popcount_mimic_circuit (inx, iny, sum);
-	input [127:0] inx;
-	input [127:0] iny;
-	output [7:0] sum;	
+module popcount_mimic_circuit (inx_ext, iny_ext, sum_ext, clk);
+	input [127:0] inx_ext;
+	input [127:0] iny_ext;
+	input clk;
+	output reg[7:0] sum_ext;	
 
   wire [35:0]int_sum;
   wire [17:0]int_sum_2;
@@ -9,6 +10,17 @@ module popcount_mimic_circuit (inx, iny, sum);
   wire [5:0] int_s0;
   wire [5:0] int_s1;
 
+	reg [127:0]inx;
+	reg [127:0]iny;
+	wire[7:0]sum;
+	
+	always @ (posedge clk) begin
+		inx <= inx_ext;
+		iny <= iny_ext;
+		sum_ext <= sum;
+	end
+	
+	
   genvar i;
   generate
   for (i=0; i<6; i=i+1) begin: xnorpop20	
@@ -34,17 +46,6 @@ module popcount_mimic_circuit (inx, iny, sum);
   add32 add32 (.x(int_sum), .s2(sum[2]), .cout(int_sum_2));
   addall addall (.x(int_sum_2), .sum(sum[7:3]));
 
-/*  reg [4:0] int_final_sum; 
-  integer j;
-  always @ (*) begin
-    int_final_sum = 0;
-    for (j = 0; j < 18; j = j+1) begin
-      int_final_sum= int_final_sum + int_sum_2[j];
-    end
-  end
-
-  assign sum[7:3] = int_final_sum[4:0];
-	*/
 endmodule
 
 //////////////////////////////////////////////////////////////////////////////////////////
