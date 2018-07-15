@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Wed May  9 08:25:01 2018
+# Process ID: 26005
+# Current directory: /home/kimjin14/work/mapping/fpga_synthesis/xilinx/adder
+# Command line: vivado adder.xpr
+# Log file: /home/kimjin14/work/mapping/fpga_synthesis/xilinx/adder/vivado.log
+# Journal file: /home/kimjin14/work/mapping/fpga_synthesis/xilinx/adder/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project adder.xpr
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+close_design
+open_run impl_1
