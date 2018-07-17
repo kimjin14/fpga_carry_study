@@ -1,6 +1,6 @@
 
 module fpga_top (clk, rstn, addr, we, dx, dw, dt, out);
-	localparam N = 128;
+	localparam N = 256;
 	localparam POP = 16;
 	input clk;
 	input we;

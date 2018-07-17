@@ -32,7 +32,7 @@ module xnor_popcount_arch2_256_reg (clk, xi, wi, yi);
 	genvar g;
 	generate
 		for (g=0; g<2; g=g+1) begin: xnor_pop_128
-			xnor_popcount_arch2_128 xnor_popcount (.clk(clk), .xi(xi[g*128+:128]), .wi(wi[g*128+:128]), .yi(cout[g*8+:8])); 
+			xnor_popcount_arch2_128_reg xnor_popcount (.clk(clk), .xi(xi[g*128+:128]), .wi(wi[g*128+:128]), .yi(cout[g*8+:8])); 
 		end
 	endgenerate
 	

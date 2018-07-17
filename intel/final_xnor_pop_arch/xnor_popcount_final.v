@@ -130,7 +130,7 @@ module xnor_popcount_arch1_128_reg (clk, xi, wi, yi);
 
   //assign {cout[1], sum_2} = sum_1[0+:32] + sum_1[32+:32];
   assign cout[1] = s1;
-  assign sum2 = sum_r2;
+  assign sum_2 = sum_r2;
 
   assign {cout[2], sum_3} = sum_2[0+:16] + sum_2[16+:16];
   assign {cout[3], sum_4} = sum_3[0+:8] + sum_3[8+:8];
