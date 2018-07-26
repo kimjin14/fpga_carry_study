@@ -1,0 +1,20 @@
+read_verilog ripple_carry.v
+
+set_load 0.05 "O*"
+set_driving_cell -lib_cell BUFFD1 [get_ports I*] 
+set_driving_cell -lib_cell BUFFD1 [get_ports cin]
+
+set_false_path -from config_in*
+set_disable_timing fle*/*bypass*/in[0]
+
+create_clock [get_ports clk]  -period 1  -waveform {0 0.5}
+set_max_delay -from [get_ports I*] 1 
+set_max_delay -to [get_ports O*] 1
+
+set_max_delay -from cin -to cout 1 
+set_max_delay -from [get_ports I*] -to cout 1 
+
+compile
+
+report_area -hierarchy > area/intel.log
+quit

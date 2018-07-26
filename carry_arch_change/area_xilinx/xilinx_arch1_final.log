@@ -1,0 +1,110 @@
+ 
+****************************************
+Report : area
+Design : clb
+Version: H-2013.03-SP5-2
+Date   : Tue Jul 24 12:42:28 2018
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    tcbn65gpluswc (File: /CMC/kits/tsmc_65nm_libs/tcbn65gplus/TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tcbn65gplus_140b/tcbn65gpluswc.db)
+
+Number of ports:                           93
+Number of nets:                           822
+Number of cells:                          741
+Number of combinational cells:             89
+Number of sequential cells:               636
+Number of macros/black boxes:               0
+Number of buf/inv:                         88
+Number of references:                      25
+
+Combinational area:               3542.400062
+Buf/Inv area:                      591.840020
+Noncombinational area:            6039.359791
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  9581.759853
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------------
+clb                               9581.7599    100.0   134.2800  5981.7598  0.0000  clb
+mux_0                              128.8800      1.3   128.8800     0.0000  0.0000  mux29_0
+mux_12                              90.3600      0.9    90.3600     0.0000  0.0000  mux29_12
+mux_18                              95.4000      1.0    95.4000     0.0000  0.0000  mux29_11
+mux_24                             111.9600      1.2   111.9600     0.0000  0.0000  mux29_10
+mux_298                            156.6000      1.6   156.6000     0.0000  0.0000  mux29_7
+mux_30                              70.9200      0.7    70.9200     0.0000  0.0000  mux29_9
+mux_304                            129.6000      1.4   129.6000     0.0000  0.0000  mux29_6
+mux_310                             82.4400      0.9    82.4400     0.0000  0.0000  mux29_5
+mux_316                            102.6000      1.1   102.6000     0.0000  0.0000  mux29_4
+mux_322                            106.5600      1.1   106.5600     0.0000  0.0000  mux29_3
+mux_328                             72.7200      0.8    72.7200     0.0000  0.0000  mux29_2
+mux_334                             70.5600      0.7    70.5600     0.0000  0.0000  mux29_1
+mux_36                              70.5600      0.7    70.5600     0.0000  0.0000  mux29_8
+mux_6                              125.6400      1.3   125.6400     0.0000  0.0000  mux29_13
+slice_0                           1013.0400     10.6    32.4000     0.0000  0.0000  slice_0
+slice_0/ble6_0                     286.2000      3.0     8.6400     0.0000  0.0000  ble6_0
+slice_0/ble6_0/lut5_0              143.2800      1.5   143.2800     0.0000  0.0000  lut5_0
+slice_0/ble6_0/lut5_1              134.2800      1.4   134.2800     0.0000  0.0000  lut5_15
+slice_0/ble6_1                     154.0800      1.6     4.3200     0.0000  0.0000  ble6_7
+slice_0/ble6_1/lut5_0               74.8800      0.8    74.8800     0.0000  0.0000  lut5_14
+slice_0/ble6_1/lut5_1               74.8800      0.8    74.8800     0.0000  0.0000  lut5_13
+slice_0/ble6_2                     155.8800      1.6     3.9600     0.0000  0.0000  ble6_6
+slice_0/ble6_2/lut5_0               75.6000      0.8    75.6000     0.0000  0.0000  lut5_12
+slice_0/ble6_2/lut5_1               76.3200      0.8    76.3200     0.0000  0.0000  lut5_11
+slice_0/ble6_3                     156.2400      1.6     3.6000     0.0000  0.0000  ble6_5
+slice_0/ble6_3/lut5_0               76.3200      0.8    76.3200     0.0000  0.0000  lut5_10
+slice_0/ble6_3/lut5_1               76.3200      0.8    76.3200     0.0000  0.0000  lut5_9
+slice_0/carrychain0                 65.5200      0.7    65.5200     0.0000  0.0000  carrychain_1b_0
+slice_0/ff_0                         7.2000      0.1     0.0000     7.2000  0.0000  ff_0
+slice_0/ff_1                         7.2000      0.1     0.0000     7.2000  0.0000  ff_7
+slice_0/ff_2                         7.2000      0.1     0.0000     7.2000  0.0000  ff_6
+slice_0/ff_3                         7.2000      0.1     0.0000     7.2000  0.0000  ff_5
+slice_0/mux4_out3                   13.6800      0.1    13.6800     0.0000  0.0000  mux4_0
+slice_0/mux5_out0                   23.7600      0.2    23.7600     0.0000  0.0000  mux5_7
+slice_0/mux5_out1                   14.7600      0.2    14.7600     0.0000  0.0000  mux5_6
+slice_0/mux5_out2                   16.9200      0.2    16.9200     0.0000  0.0000  mux5_5
+slice_0/mux5_out3                   14.4000      0.2    14.4000     0.0000  0.0000  mux5_0
+slice_0/mux6_out0                   18.7200      0.2    18.7200     0.0000  0.0000  mux6_0
+slice_0/mux6_out1                   15.8400      0.2    15.8400     0.0000  0.0000  mux6_5
+slice_0/mux6_out2                   15.8400      0.2    15.8400     0.0000  0.0000  mux6_4
+slice_1                           1037.8800     10.8    29.5200     0.0000  0.0000  slice_1
+slice_1/ble6_0                     311.4000      3.2     8.6400     0.0000  0.0000  ble6_4
+slice_1/ble6_0/lut5_0              163.4400      1.7   163.4400     0.0000  0.0000  lut5_8
+slice_1/ble6_0/lut5_1              139.3200      1.5   139.3200     0.0000  0.0000  lut5_7
+slice_1/ble6_1                     154.0800      1.6     4.3200     0.0000  0.0000  ble6_3
+slice_1/ble6_1/lut5_0               74.8800      0.8    74.8800     0.0000  0.0000  lut5_6
+slice_1/ble6_1/lut5_1               74.8800      0.8    74.8800     0.0000  0.0000  lut5_5
+slice_1/ble6_2                     155.8800      1.6     3.9600     0.0000  0.0000  ble6_2
+slice_1/ble6_2/lut5_0               75.6000      0.8    75.6000     0.0000  0.0000  lut5_4
+slice_1/ble6_2/lut5_1               76.3200      0.8    76.3200     0.0000  0.0000  lut5_3
+slice_1/ble6_3                     156.2400      1.6     3.6000     0.0000  0.0000  ble6_1
+slice_1/ble6_3/lut5_0               76.3200      0.8    76.3200     0.0000  0.0000  lut5_2
+slice_1/ble6_3/lut5_1               76.3200      0.8    76.3200     0.0000  0.0000  lut5_1
+slice_1/carrychain0                 70.2000      0.7    70.2000     0.0000  0.0000  carrychain_1b_1
+slice_1/ff_0                         7.2000      0.1     0.0000     7.2000  0.0000  ff_4
+slice_1/ff_1                         7.2000      0.1     0.0000     7.2000  0.0000  ff_3
+slice_1/ff_2                         7.2000      0.1     0.0000     7.2000  0.0000  ff_2
+slice_1/ff_3                         7.2000      0.1     0.0000     7.2000  0.0000  ff_1
+slice_1/mux4_out3                   13.6800      0.1    13.6800     0.0000  0.0000  mux4_1
+slice_1/mux5_out0                   15.8400      0.2    15.8400     0.0000  0.0000  mux5_3
+slice_1/mux5_out1                   16.9200      0.2    16.9200     0.0000  0.0000  mux5_2
+slice_1/mux5_out2                   20.1600      0.2    20.1600     0.0000  0.0000  mux5_1
+slice_1/mux5_out3                   15.4800      0.2    15.4800     0.0000  0.0000  mux5_4
+slice_1/mux6_out0                   18.0000      0.2    18.0000     0.0000  0.0000  mux6_3
+slice_1/mux6_out1                   15.8400      0.2    15.8400     0.0000  0.0000  mux6_2
+slice_1/mux6_out2                   15.8400      0.2    15.8400     0.0000  0.0000  mux6_1
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------------
+Total                                                 3542.4001  6039.3598  0.0000
+
+1
