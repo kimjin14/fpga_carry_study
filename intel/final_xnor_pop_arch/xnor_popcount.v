@@ -1,6 +1,6 @@
 
 module fpga_top (clk, rstn, addr, we, dx, dw, dt, out);
-	localparam N = 256;
+	localparam N = 128;
 	localparam POP = 16;
 	input clk;
 	input we;
@@ -71,7 +71,7 @@ module xnor_popcount (clk, rstn, xi, wi, ti, out);
 		end
 	end
 	
-	xnor_popcount_arch1 #(N,$clog2(N)+1) xnor_pop (clk, xi, wi, yi);
+	xnor_popcount_arch2_reg #(N,$clog2(N)+1) xnor_pop (clk, xi, wi, yi);
 	
 	// Output 1 if above threshold
 	assign out = sum > ti? 1'b1 : 1'b0;

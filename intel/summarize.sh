@@ -6,9 +6,10 @@
 #files=(final_xnor_pop)
 width_options=(32 64 128 256)
 popcount_options=(final_xnor_pop/report_new/xnor_popcount_generic final_xnor_pop/report_new/xnor_popcount_verilog final_xnor_pop/report_new/xnor_popcount_verilog_reg final_xnor_pop_arch/report_new/xnor_popcount_arch1 final_xnor_pop_arch/report_new/xnor_popcount_arch1_reg final_xnor_pop_arch/report_new/xnor_popcount_arch2 final_xnor_pop_arch/report_new/xnor_popcount_arch2_reg)
+#popcount_options=(final_xnor_pop/report_new/xnor_popcount_generic final_xnor_pop/report_new/xnor_popcount_verilog final_xnor_pop/report_new/xnor_popcount_verilog_reg)
 seeds=(1 100 1000 353234 1023830)
 
-AREA=1
+AREA=0
 DELAY=1
 
 if [ $AREA -eq 1 ]

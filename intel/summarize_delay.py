@@ -21,8 +21,8 @@ path_counter = -1
 
 # Extra delays due to these particular paths
 COUT_DELAY = 0.0
-SUMOUT_DELAY = 0.0
-ADDER_DELAY = 0.0
+SUMOUT_DELAY = 0.017 
+ADDER_DELAY = 0.034
 
 total_delay = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 total_extra_delay = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
@@ -42,6 +42,7 @@ with open(input_file) as f:
       total_delay[path_counter]+=incr_delay
       if "arch1" in popcount_options:
         element = line_breakdown[8]
+        #print element
         if "cout" in element:
           total_extra_delay[path_counter]+=COUT_DELAY
         elif "sumout" in element:
@@ -51,7 +52,8 @@ with open(input_file) as f:
         if "cout" in element:
           total_extra_delay[path_counter]+=COUT_DELAY
         elif "sumout" in element:
-          total_extra_delay[path_counter]+=(SUMOUT_DELAY*2+ADDER_DELAY)
+          total_extra_delay[path_counter]+=(SUMOUT_DELAY+ADDER_DELAY)
+#print total_extra_delay
 
 for i in range(10):
   total_extra_delay[i]+=total_delay[i]

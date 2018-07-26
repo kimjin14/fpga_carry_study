@@ -1,6 +1,6 @@
 
 module fpga_top (clk, rstn, addr, we, dx, dw, dt, out);
-	localparam N = 256;
+	localparam N = 8;
 	localparam POP = 16;
 	input clk;
 	input we;
@@ -125,7 +125,8 @@ module xnor_popcount_verilog (clk, xi, wi, yi);
 		else if (N%3==1) begin
 			for (g = 0; g < P; g = g + 1) begin: gen_xnor_pop_3
         if (g == P-1) begin
-			    xnor_popcount_3 xnorpop3 ({xi[g*3+:1], 2'b00}, {wi[g*3+:1], 2'b00}, partial_sum[g*2+:2]);
+					assign partial_sum[g*2+:1] = xi[61] ^ wi[61];
+			    //xnor_popcount_3 xnorpop3 ({xi[g*3+:1], 2'b00}, {wi[g*3+:1], 2'b00}, partial_sum[g*2+:2]);
         end
         else begin
 				  xnor_popcount_3 xnorpop3 (xi[g*3+:3], wi[g*3+:3], partial_sum[g*2+:2]);
@@ -175,7 +176,7 @@ module xnor_popcount_verilog_reg (clk, xi, wi, yi);
   input [N-1:0]xi; 
   input [N-1:0]wi; 
   input clk;
-  output reg [D-1:0]yi /* synthesis preserve*/; 
+  output reg [D-1:0]yi ; 
   
 	wire [(P*2)-1:0] partial_sum;
 	
